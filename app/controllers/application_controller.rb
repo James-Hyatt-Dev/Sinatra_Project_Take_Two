@@ -6,11 +6,11 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions
-    set :session_secret, "fwitter_secret"
+    set :session_secret, "relion_project_management"
   end
 
   get '/' do
-    erb :index
+    erb :'index'
   end
 
   helpers do
