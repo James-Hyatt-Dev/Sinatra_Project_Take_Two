@@ -18,10 +18,11 @@ class UsersController < ApplicationController
       if params[:username] == "" || params[:email] == "" || params[:password] == ""
         redirect to '/signup'
       else
-        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password])
+        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :created_at => params[:created_at])
         @user.save
         session[:user_id] = @user.id
-        redirect to '/projects'
+        binding.pry
+         redirect to '/projects'
       end
     end
   
