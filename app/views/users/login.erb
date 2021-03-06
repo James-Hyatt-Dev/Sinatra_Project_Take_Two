@@ -78,14 +78,24 @@
       top: 20px;
       right: 10px;
       }
-      .circle {
+      .circle-a {
       position: absolute;
       bottom: 80px;
       left: -55px;
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #fff;
+      background: #3ABB08;
+      }
+
+      .circle-b {
+      position: absolute;
+      top: 40px;
+      right: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3ABB08;
       }
       .form-inner {
       padding: 40px;
@@ -129,8 +139,9 @@
     <form action="/login" method="POST">
       <div class="form-left-decoration"></div>
       <div class="form-right-decoration"></div>
-      <div class="circle"></div>
-      <div class="form-inner">
+      <div class="circle-a"></div>
+      <div class="circle-b"></div> 
+            <div class="form-inner">
       <h1>User Login</h1>
        <label for="username"><strong>Username</strong></label>
         <input type="text" placeholder="Enter Username" name="username" required>

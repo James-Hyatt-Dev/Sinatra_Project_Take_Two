@@ -78,14 +78,24 @@
       top: 20px;
       right: 10px;
       }
-      .circle {
+      .circle-a {
       position: absolute;
       bottom: 80px;
       left: -55px;
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      background: #fff;
+      background: #3ABB08;
+      }
+
+      .circle-b {
+      position: absolute;
+      top: 40px;
+      right: -55px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #3ABB08;
       }
       .form-inner {
       padding: 40px;
@@ -120,7 +130,7 @@
       } 
       @media (min-width: 568px) {
       form {
-      width: 60%;
+      width: auto;
       }
       }
     </style>
@@ -132,8 +142,9 @@
     <form action="/projects/new" method="GET">
       <div class="form-left-decoration"></div>
       <div class="form-right-decoration"></div>
-      <div class="circle"></div>
-      <div class="form-inner">
+      <div class="circle-a"></div>
+      <div class="circle-b"></div> 
+            <div class="form-inner">
 
       <h2>Welcome, <%=current_user.username %></h2>
       <button type="submit">Create Project</button><br/><br/><br/>
