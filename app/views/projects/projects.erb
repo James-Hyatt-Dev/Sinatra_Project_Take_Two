@@ -7,7 +7,9 @@
       * {
       box-sizing: border-box;
        }
-     
+      ul.a{
+
+      }
       html, body {
       min-height: 100vh;
       padding: 0;
@@ -145,17 +147,17 @@ x
 
 
 
-<h2> Projects </h2>
+<h3> All Projects </h3>
 <ul>
 <% @projects.each do |project| %>
 
  
-    
-   <li><a href="/projects/<%=project.id%>"><%= project.content %></a></li>
-
  
+<li> <a href="/projects/<%=project.id%>"><%= project.content %></a></li>
+
+  </ul>
+
 <% end %>
-</ul>
 </form>
    </body>
 </html>
