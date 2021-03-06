@@ -138,8 +138,7 @@
       <h2>Welcome, <%=current_user.username %></h2>
       <button type="submit">Create Project</button><br/><br/><br/>
 
-     <a href="/logout"> Log Out </a>
-
+ 
 <% else %>
   
 <form action="/signup" method="GET">
@@ -148,7 +147,7 @@
       <div class="circle"></div>
       <div class="form-inner">
 
-      <h1>Don't have an account?</h1>
+      <h2>Don't have an account?</h2>
       <button type="submit">Create User Account</button><br/><br/><br/>
 
     <a href="/login"> Sign In </a>

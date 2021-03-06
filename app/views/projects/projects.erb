@@ -136,28 +136,27 @@ x
     </style>
   </head>
   <body>
-  <ul class ="a">
-
+ 
 <form>
       <div class="form-left-decoration"></div>
       <div class="form-right-decoration"></div>
       <div class="circle"></div>
       <div class="form-inner">
 <h2> Welcome, <%= current_user.username %> </h2> 
-
-
-
+ 
+ <a href="/users/<%= @current_user.username.downcase %>"><b><i>See Your Projects</i></b></a><br/>
+  <a href="/projects/new"><b><i>Create a Project</i></b></a><br/><br/>
 <h3> All Projects </h3>
-<ul>
-<% @projects.each do |project| %>
+ <% @projects.each do |project| %>
+
+ 
+ <li> <a href="/projects/<%=project.id%>"><%= project.content %></li><br/>
+
+<%end%>
 
  
  
-<li> <a href="/projects/<%=project.id%>"><%= project.content %></a></li>
-
-  </ul>
-
-<% end %>
+</div>
 </form>
    </body>
 </html>

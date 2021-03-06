@@ -132,14 +132,18 @@
       <div class="form-right-decoration"></div>
       <div class="circle"></div>
       <div class="form-inner">
-        <h3>Project:</h3><h2><%=@project.title%></h2>
+        <h3>Project created by <%=@project.user.name%></h3><h2><%=@project.title%></h2>
       
 
-        <textarea name="content" rows="5" readonly="readonly"><%= @project.content %>"</textarea> 
+        <textarea name="content" rows="5" readonly="readonly"><%= @project.content %></textarea> 
   <input id="hidden" type="hidden" name="_method" value="DELETE">
+
+          <%if @project && @project.user == current_user%>
 
          <button type="submit">Delete Project</button><br/><br/>
         <a href="/projects/<%=@project.id%>/edit">Edit Project </a>
+                  <%end%>
+
        </div>
     </form>
   </body>

@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
           if params[:content] == ""
             redirect to "/projects/new"
           else
-            @project = current_user.projects.build(content: params[:content], title: params[:title])
+            @project = current_user.projects.build(content: params[:content], title: params[:title], created_at: params[:created_at])
              if @project.save
               binding.pry
               redirect to "/projects/#{@project.id}"
@@ -83,7 +83,7 @@ class ProjectsController < ApplicationController
           @project = Project.find_by_id(params[:id])
           if @project && @project.user == current_user
             @project.delete
-            binding.pry
+            
           end
           redirect to '/projects'
         else

@@ -11,21 +11,33 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="/stylesheets/main.css" />
-  </head>
+    <link rel="stylesheet" href="/stylesheets/main.css" /> 
+  </head> 
   <body>
-    <div class="wrapper">
+     <div class="wrapper">
     <h1>Relion Project Management</h1>
+
+
+
+
+
+
+
+
 
         <%= yield %>
 
       <footer class="branding">
-        <small>&copy; 2021 <strong>Relion Project Management</strong></small>
+        <img src="/images/relionprojectlogo.png" alt="RPM Logo" width="100" height="100"><small>&copy; 2021 <strong>Relion Project Management | Made with 	&#128150;&nbsp; & &#9749;&nbsp;  in Cape Coral Florida</strong></small>
       
-      <br/>
-      <a href="/">Home</a><br/> 
+      <br/><br/>
+       <a href="/">Home</a><br/> 
+             <%if logged_in?%>
+
       <a href="/projects">All Projects</a><br/>
-      <a href="/users/<%=@user_username_downcase %>">Your Projects</a><br/>
+      <a href="/logout">Logout</a><br/>
+      <%end%>
+
 
  
 

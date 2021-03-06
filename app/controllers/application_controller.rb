@@ -23,16 +23,6 @@ class ApplicationController < Sinatra::Base
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
 
-    def time_project_created
-      DateTime.now
-    end
-
-    def time_user_created
-      DateTime.now
-    end
-
-    def self.user_username_downcase
-      @current_user.username.user_username_downcase
-    end
+    
   end
 end
