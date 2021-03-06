@@ -15,14 +15,14 @@ class UsersController < ApplicationController
     end
   
     post '/signup' do
-      if params[:username] == "" || params[:email] == "" || params[:password] == ""
+      if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:name] == ""
         redirect to '/signup'
       else
-        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :created_at => params[:created_at])
+        @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :created_at => params[:created_at], :name => params[:name])
         @user.save
         session[:user_id] = @user.id
         binding.pry
-         redirect to '/projects'
+        redirect to '/projects'
       end
     end
   
