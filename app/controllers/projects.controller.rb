@@ -22,8 +22,9 @@ class ProjectsController < ApplicationController
           if params[:content] == ""
             redirect to "/projects/new"
           else
-            @project = current_user.projects.build(content: params[:content])
-            if @project.save
+            @project = current_user.projects.build(content: params[:content], title: params[:title])
+             if @project.save
+              binding.pry
               redirect to "/projects/#{@project.id}"
             else
               redirect to "/projects/new"
@@ -58,12 +59,12 @@ class ProjectsController < ApplicationController
     
       patch '/projects/:id' do
         if logged_in?
-          if params[:content] == ""
+          if params[:content] == "" || params[:title] == ""
             redirect to "/projects/#{params[:id]}/edit"
           else
             @project = Project.find_by_id(params[:id])
             if @project && @project.user == current_user
-              if @project.update(content: params[:content])
+              if @project.update(content: params[:content], title: params[:title])
                 redirect to "/projects/#{@project.id}"
               else
                 redirect to "/projects/#{@project.id}/edit"
