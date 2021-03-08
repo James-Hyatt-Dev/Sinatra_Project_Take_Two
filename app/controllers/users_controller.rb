@@ -2,8 +2,12 @@ class UsersController < ApplicationController
 
     get '/users/:slug' do
         
-      @user = User.find_by_slug(params[:slug])
-      erb :'users/show'
+      if @user = User.find_by_slug(params[:slug])
+        erb :'users/show'
+      else
+        redirect to '/projects'
+      end
+
     end
   
     get '/signup' do
@@ -15,15 +19,14 @@ class UsersController < ApplicationController
     end
   
     post '/signup' do
-      if params[:username] == "" || params[:email] == "" || params[:password] == "" || params[:name] == ""
-        redirect to '/signup'
-      else
         @user = User.new(:username => params[:username], :email => params[:email], :password => params[:password], :created_at => params[:created_at], :name => params[:name])
-        @user.save
-        session[:user_id] = @user.id
-        
-        redirect to '/projects'
-      end
+        if @user.save
+          session[:user_id] = @user.id
+          redirect to '/projects'
+        else
+          redirect to '/signup'
+        end
+      
     end
   
     get '/login' do
