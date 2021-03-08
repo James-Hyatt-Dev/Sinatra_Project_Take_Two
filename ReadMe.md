@@ -14,21 +14,17 @@ Sinatra App Project
   As this is a web application, there are some styling to this as well. To create the styling, I simply found a template form written in html that I liked and utilized it throughout the application as I do not know much about HTML or CSS, this was the fastes and easiest thing to do to give the application a GU Interface. I did however figure out how to change the coloring of some aspects, and did enjoy exploring that aspect of the development. 
 
 Running the application
-
   This is a web application, and the required gem 'shotgun' has been placed into the gemfile. After cloning the repository to your text editor, run bundle install and enter into shotgun by typing shotgun into your terminal. Open a web browser and go to localhost:9393 in your address bar. 
 
   There you will be able to create a user name as well as projects as highlighted above. 
 
 Versioning 1.0.0
-
   As this is a school project. Once the project has been submitted, no further development will be completed. The version on this application is stagnant.
 
 Authors
-
   As this is a school project. Once the project has been submitted, no further development will be completed. The version on this application is stagnant.
 
 License
-
   This project is licensed under the CC0 1.0 Universal Creative Commons License - see the LICENSE.md file for details
 
 
