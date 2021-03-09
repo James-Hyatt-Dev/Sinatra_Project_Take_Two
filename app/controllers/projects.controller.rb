@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
     get '/projects' do
         if logged_in?
           @projects = Project.all
+          binding.pry
           erb :'projects/projects'
         else
           redirect to '/login'
@@ -21,7 +22,7 @@ class ProjectsController < ApplicationController
         if logged_in?
             @project = current_user.projects.build(content: params[:content], title: params[:title], created_at: params[:created_at])
              if @project.save
-              binding.pry
+              
               redirect to "/projects/#{@project.id}"
             else
               redirect to "/projects/new"
